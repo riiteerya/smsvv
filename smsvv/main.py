@@ -167,12 +167,12 @@ def check_channels(call):
 
         markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
         markup.add(types.KeyboardButton('🚀 Spam SMS'))
-        markup.add(types.KeyboardButton('🎫 Nhóm bán STK bào game'), types.KeyboardButton('🌐 Proxy bào game'))
+        markup.add(types.KeyboardButton('🎫 Web bán voucher'), types.KeyboardButton('🌐 Proxy bào game'))
         markup.add(types.KeyboardButton('🏆 Danh sách spam'))
 
         bot.send_message(
             call.message.chat.id,
-            "<b>🔴 CHÀO MỪNG BẠN QUAY LẠI! 🎉</b>",
+            "<b>🔴 CHÀO MỪNG BẠN QUAY LẠI! 🎉\n 👉🏻 LỰA CHỌN CÁC NÚT PHÍA DƯỚI NHÉ👇🏻</b>",
             parse_mode='HTML',
             reply_markup=markup
         )
@@ -844,6 +844,42 @@ def handle_game_promotion(message):
         text=caption,
         parse_mode='HTML'
     )
+
+@bot.message_handler(func=lambda message: message.text == '🎫 Web bán voucher')
+def handle_game_promotion(message):
+    photo_url = 'https://i.imgur.com/pOMJocu.png'
+    caption = (
+        "<blockquote><b>💎 𝕂𝕄𝔹𝟚𝟜𝟟.𝕏𝕐ℤ❗️\n\n"
+        "〽️ XÉT DUYỆT NHANH CHÓNG - TIỆN LỢI❗️\n\n"
+        "🔰 NẠP TIỀN TỰ ĐỘNG 30S - 1P TIỀN VÀO❗️\n\n"
+        "🔆 MUA NGAY <a href='https://kmb247.xyz/'>TẠI ĐÂY❗️</a> \n\n"
+        "👮🏻‍♂️ <a href='https://t.me/khangmb247'>ADMIN WEB</a>\n\n</b></blockquote>"
+    )
+    
+    bot.send_photo(
+        message.chat.id, 
+        photo=photo_url, 
+        caption=caption, 
+        parse_mode='HTML'
+    )
+
+@bot.message_handler(func=lambda message: message.text == '🌐 Proxy bào game')
+def handle_game_promotion(message):
+    photo_url = 'https://i.imgur.com/NdT2eIl.jpeg'
+    caption = (
+        "<blockquote><b>👮🏻‍♂️ PROXY V4❗️❗️\n\n"
+        "🔰 CÓ LOẠI REG 24H, HẠN DÀI HƠN VẪN CÓ❗️\n\n"
+        "🌐 WEB <a href='https://kmb247.me/'>TẠI ĐÂY❗️</a> \n\n"
+        "👮🏻‍♂️ <a href='https://t.me/khangmb247'>ADMIN WEB</a>\n\n</b></blockquote>"
+    )
+    
+    bot.send_photo(
+        message.chat.id, 
+        photo=photo_url, 
+        caption=caption, 
+        parse_mode='HTML'
+    )
+
 
 # Chạy bot
 bot.polling()
