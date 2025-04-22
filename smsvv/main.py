@@ -135,7 +135,7 @@ def handle_start(message):
         markup.add(types.InlineKeyboardButton('👉 Tham Gia Nhóm 👈', url=f'https://t.me/{channel[1:]}'))
     markup.add(types.InlineKeyboardButton('✔️ Kiểm Tra ✔️', callback_data='check'))
 
-    photo_url = 'https://i.imgur.com/anWzgzZ.jpeg'
+    photo_url = 'https://i.imgur.com/D1cnOlp.png'
     bot.send_photo(
         message.chat.id,
         photo=photo_url,
@@ -324,7 +324,7 @@ def handle_smskmb(message):
             tha_camxuc(message.chat.id, message.message_id, random_emoji)
         else:
             bot.edit_message_text(
-                "<b>❌ Tập tin api.py không tìm thấy!</b>",
+                "<b>❌ Có chút lỗi rồi!</b>",
                 chat_id=message.chat.id,
                 message_id=temp_message.message_id,
                 parse_mode='HTML'
