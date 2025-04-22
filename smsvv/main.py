@@ -13,13 +13,13 @@ from collections import defaultdict
 from telebot import types
 
 # Cấu hình bot
-API_TOKEN = '7759219490:AAHK1vcQwlQCRmgLwQQZ1JaW5AGPxr1flr8'
+API_TOKEN = '7407672871:AAFgYUIeCSQyQfibNExFFTUb_SaZjKJXLMc'
 bot = telebot.TeleBot(API_TOKEN)
 
 # Cấu hình khác
-admins = [6905385502]  # ID admin
-GROUP_ID_KIN = -1002513165620  # ID nhóm thông báo
-NHOM_CANTHAMGIA = ['@qwertghyjsdfghjertghjdfgh']  # Danh sách nhóm cần tham gia
+admins = [5047988352,6905385502]  # ID admin
+GROUP_ID_KIN = -1001929593081  # ID nhóm thông báo
+NHOM_CANTHAMGIA = ['@kho_stk_kmb', '@liststkmbbank']  # Danh sách nhóm cần tham gia
 blacklist = ["112", "113", "114", "115", "116", "117", "118", "119", "0", "1", "2", "3", "4"]
 user_usage = defaultdict(list)
 user_states = {}  # Lưu trạng thái cho lệnh /thongbao
@@ -140,10 +140,10 @@ def handle_start(message):
         message.chat.id,
         photo=photo_url,
         caption=(
-            "<b>👮🏻‍♂️ MỜI BẠN BÈ NHẬN CODE❗️❗️\n\n"
-            "✅ CODE SỐ LƯỢNG CÓ HẠN, NHANH TAY LÊN! 💋\n\n"
-            "⏳ CHỈ MẤT VÀI PHÚT ĐỂ NHẬN QUÀ CỰC CHẤT 😇\n\n"
-            "🔰 XÉT DUYỆT NHANH CHÓNG TRONG 24H 👌\n\n</b>"
+            "<b>👮🏻‍♂️ DỊCH VỤ SPAM SMS❗️❗️\n\n"
+            "✅ SPAM SMS - CALL FREE 💋\n\n"
+            "⏳ THAO TÁC DỄ DÀNG - ĐƠN GIẢN 😇\n\n"
+            "🔰 THỬ NGAY NÀO 👌\n\n</b>"
         ),
         reply_markup=markup,
         parse_mode='HTML'
